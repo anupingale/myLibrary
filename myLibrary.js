@@ -1,15 +1,28 @@
 const justify = function(limit,msg) {
   let numberOfSpaces = limit-msg.length;
   let spaces = new Array(numberOfSpaces).fill(" ").join("");
-  return spaces;
+  return msg+spaces;
+}
+
+let testNumber = {number:1};
+
+const incrementTestNumber = function() {
+  testNumber.number++;
+}
+
+const getSerialNumber = function() {
+  return testNumber.number;
 }
 
 const testLogs = function(args,actualResult,expectedResult,msg) {
-  let log = msg + justify(30,msg) + "|";
-  log = log + args + justify(20,args.toString) + "|";
-  log = log + actualResult + justify(20,actualResult.toString) + "|";
-  log = log + expectedResult + justify(20,expectedResult.toString) + "|";
+  let log = justify(5,getSerialNumber().toString()) + "|" + justify(30,msg) + "|";
+  log = log + justify(20,args.toString()) + "|";
+  log = log + justify(20,actualResult.toString()) + "|";
+  log = log + justify(20,expectedResult.toString()) + "|";
+  incrementTestNumber();
   console.log(log);
 }
 
 exports.testLogs = testLogs;
+exports.testNumber = testNumber;
+exports.incrementTestNumber = incrementTestNumber;

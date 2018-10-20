@@ -15,3 +15,4 @@ const testSum = function(num1,num2,expectedResult,msg) {
 }
 
 testSum(1,2,3,"add two numbers");
+testSum(30,40,70,"add");
