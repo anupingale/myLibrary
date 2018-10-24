@@ -14,15 +14,14 @@ const getSerialNumber = function() {
   return testNumber.number;
 }
 
-const testLogs = function(args,actualResult,expectedResult,msg) {
+const logTest = function(args,actual,expected,msg) {
   let log = justify(5,getSerialNumber().toString()) + "|" + justify(30,msg) + "|";
   log = log + justify(20,args.toString()) + "|";
-  log = log + justify(20,actualResult.toString()) + "|";
-  log = log + justify(20,expectedResult.toString()) + "|";
+  log = log + justify(20,actual.toString()) + "|";
+  log = log + justify(20,expected.toString()) + "|";
   incrementTestNumber();
   console.log(log);
+  console.log(Array(99).fill("-").join(""));
 }
 
-exports.testLogs = testLogs;
-exports.testNumber = testNumber;
-exports.incrementTestNumber = incrementTestNumber;
+exports.logTest = logTest;
