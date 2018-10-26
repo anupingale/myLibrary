@@ -16,13 +16,13 @@ const getSerialNumber = function() {
 
 const logTest = function(args,actual,expected,msg) {
   let log = justify(5,getSerialNumber().toString()) + "|" + justify(30,msg) + "|";
-  log = log + justify(20,args.toString()) + "|";
-  log = log + justify(20,actual.toString()) + "|";
-  log = log + justify(20,expected.toString()) + "|";
+  log = log + justify(40,JSON.stringify(args)) + "|";
+  log = log + justify(20,JSON.stringify(actual)) + "|";
+  log = log + justify(20,JSON.stringify(expected)) + "|";
   incrementTestNumber();
   console.log(log);
   let character = String.fromCharCode(9472);
-  let dottedLine = new Array(99).fill(character).join("");
+  let dottedLine = new Array(120).fill(character).join("");
   console.log(dottedLine);
 }
 
