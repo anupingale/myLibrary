@@ -21,7 +21,9 @@ const logTest = function(args,actual,expected,msg) {
   log = log + justify(20,expected.toString()) + "|";
   incrementTestNumber();
   console.log(log);
-  console.log(Array(99).fill("-").join(""));
+  let character = String.fromCharCode(9472);
+  let dottedLine = new Array(99).fill(character).join("");
+  console.log(dottedLine);
 }
 
 exports.logTest = logTest;
